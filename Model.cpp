@@ -9,11 +9,9 @@ Model::Model(const char* file)
 	// Get the binary data
 	Model::file = file;
 	data = getData();
-
 	// Traverse all nodes
 	traverseNode(0);
 }
-
 void Model::Draw(Shader& shader, Camera& camera)
 {
 	// Go over all meshes and draw each one
@@ -22,6 +20,7 @@ void Model::Draw(Shader& shader, Camera& camera)
 		meshes[i].Mesh::Draw(shader, camera, matricesMeshes[i]);
 	}
 }
+
 
 void Model::loadMesh(unsigned int indMesh)
 {
@@ -277,6 +276,8 @@ std::vector<Texture> Model::getTextures()
 
 	return textures;
 }
+
+
 
 std::vector<Vertex> Model::assembleVertices
 (
